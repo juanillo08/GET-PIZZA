@@ -1,0 +1,10 @@
+const header = document.querySelector('.header__nav');
+const toggleMenu = document.querySelector('.toggle__menu');
+const backDrop = document.querySelector('.backdrop');
+
+toggleMenu.addEventListener("click", () => {
+
+    header.classList.toggle("open");
+    toggleMenu.classList.toggle("opne");
+    backDrop.classList.toggle("opne");
+});
