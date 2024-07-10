@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,27 +16,190 @@
 .serving{
     @apply pb-10;
 }
-
 .serving__img{
-    @apply flex flex-col items-center justify-center ;
+    @apply flex flex-col items-center justify-center; 
+}
+.serving__wrapper{
+    @apply lg:flex ;
+}
+.serving__img iframe{
+    @apply w-[25rem] h-[20rem]
+    /* DEKSTOP */
+    lg:w-[50rem] lg:h-[30rem];
+}
+.serving__text {
+    @apply justify-center 
+    /* DEKSTOP */
+    lg:pt-[18rem] lg:p-6 
+    
+    ;
+}
+.serving__text h1 br{
+    @apply lg:hidden
 }
 .serving__text h1{
-    @apply  text-primary font-bold text-5xl py-5;
+    @apply  text-primary font-bold text-5xl py-5 lg:max-w-[35rem];
+    /* desktop */
+
 }
 /* REVIEW */
 .review__wrapper h4{
-    @apply text-center font-bold text-2xl pt-10 pb-2;
+    @apply text-center font-bold text-2xl pt-10 pb-2
+    lg:text-center lg:justify-center lg:items-center lg:mx-auto;
 }
 .review__img img{
-    @apply rounded-full w-12  mx-auto;
+    @apply rounded-full w-10  mx-auto
+    /* dESKTOP */
+        lg:w-20
+    ;
 }
 .review__text {
-    @apply max-w-[27rem] text-center pt-5;
+    @apply max-w-[27rem] text-center items-center justify-center pt-5
+    lg:max-w-[35rem] lg:mx-auto;
+    ;
+}
+.review__card{
+    @apply text-center justify-center items-center
 }
 .review__text h6{
-    @apply py-5;
+    @apply py-5 ;
 }
+/* OUT SOTRY */
+
+.story{
+    @apply py-10;
 }
+.story__wrapper{
+    @apply lg:flex lg:text-center lg:items-center lg:justify-center lg:mx-auto lg:gap-12
+}
+.story h3{
+    @apply font-bold text-center text-4xl mb-5;
+}
+.story__content{
+    @apply text-justify;
+}
+.story__item{
+    @apply mb-5 max-w-[35rem] mx-auto;
+}
+.story__item h4,
+.story__item i
+{
+    @apply bg-primary text-white px-3 py-2 font-bold flex justify-between items-center cursor-pointer
+}
+.story__item i.open{
+    @apply rotate-180 duration-200;
+}
+.story__item p{
+    @apply bg-slate-50 h-auto max-h-0 overflow-hidden duration-300;
+}
+.story__item p.open{
+    @apply max-h-[50rem] bg-slate-50 p-3 duration-300;
+}
+.story__img{
+    @apply hidden
+    /* DESKTOP */
+    lg:block
+    ;
+}
+/* MENU */
+.bannerMenu{
+    @apply bg-menu bg-no-repeat bg-cover h-screen
+}
+.bannerMenu__title {
+    @apply justify-center items-center ;
+}
+.bannerMenu__title  h4{
+    @apply text-white pt-[25rem] font-bold text-3xl  max-w-[15rem] ml-[8rem]
+    /* DESKTOP */
+    lg:mx-auto  lg:text-5xl lg:max-w-[41rem] lg:text-center;
+ }
+
+ /* OFFER */
+.sell{
+    @apply py-10 bg-tertiary text-white;
+}
+.sell__tab ul{
+    @apply flex gap-4 text-center justify-center items-center py-5 bg-secondary font-bold rounded-[1.5rem] cursor-pointer
+    /* DEKSKTOP */
+    lg:max-w-[50rem] lg:justify-center lg:items-center lg:text-center   lg:gap-12 lg:mx-auto;
+}
+.sell__tab ul li a{
+    @apply  text-tertiary  hover:text-primary
+    /* DESKTOP */
+    ;
+}
+.sell__tab ul li a.active{
+    @apply  text-primary
+}
+.sell__details--wrap{
+    @apply grid grid-cols-3 
+    lg:max-w-[50rem] lg:mx-auto lg:gap-5
+    ;
+ }
+ .sell__tab img{
+    @apply w-1;
+ }
+ .sell__foods{
+    @apply flex flex-col gap-4 justify-center items-center text-center py-10 
+    /* dESKSTP */
+    lg:border lg:rounded-2xl 
+    ;
+ }
+ .sell__foods img{
+    @apply w-28;
+ }
+ .sell__details{
+    @apply hidden;
+}
+.sell__details.active{
+    @apply block;
+ }
+.sell__tab ul span{
+    @apply inline-block w-[1px] h-[1.4rem] bg-white;
+}
+
+/* CONTACT */
+.map{
+    @apply py-10
+}
+.map__wrapper iframe{
+    @apply w-[27rem]  h-[45rem] mx-auto
+    lg:w-[70rem] lg:pt-[7rem]
+    ;
+}
+.info{
+    @apply bg-secondary
+}
+.info__wrapper{
+    @apply flex flex-col items-center py-[2rem];
+}
+.info__wrapper h2{
+    @apply text-4xl font-bold
+}
+.info__wrapper form{
+    @apply flex flex-col gap-4 py-[2rem]
+    lg:w-[50rem] lg:justify-between;
+}
+.info__wrapper .fullName{
+    @apply flex gap-[1rem]
+}
+.info__wrapper .fullName input{
+    @apply lg:w-[49%]
+}
+.info__wrapper input{
+    @apply py-2 px-3 rounded-lg
+}
+.info__wrapper textarea{
+    @apply pb-[10rem] rounded-lg py-2 px-3 resize-none
+}
+
+
+
+
+
+}
+
+
 @layer components {
     /* header */
     .header {
@@ -61,8 +225,6 @@
       @apply flex flex-col gap-1 z-50
       /* DESKTOP */
       lg:hidden
-      
-      
       ;
     }
     .toggle__menu span {
@@ -236,4 +398,8 @@
  .footer__details h3{
     @apply font-bold text-2xl;
  }
+
+
+
+
 }
